@@ -1,0 +1,1 @@
+from game import *import random as rnd;class Player:	def choose_action(self, state):		return rnd.choice(list(Game.allowed_actions(state)))
