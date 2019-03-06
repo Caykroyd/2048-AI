@@ -22,7 +22,7 @@ sum_tiles = []
 def max_val(board):
     return np.asarray(board).max()
 
-for i in range(100000):
+for i in range(10000):
     action,_states = model.predict(obs)
     obs, rewards, done, info = env.step(action)
     moves += 1
@@ -43,3 +43,7 @@ plt.xlabel("Game")
 plt.ylabel("Max tile")
 plt.show()
 
+from utils import avg_value
+print("64:",avg_value(64,max_tile))
+print("128:",avg_value(128,max_tile))
+print("256:",avg_value(256,max_tile))
